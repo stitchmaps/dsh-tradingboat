@@ -1,0 +1,61 @@
+{
+  "name": "dsh-tradingboat",
+  "version": "0.1.0",
+  "description": "交易之舟 · 全屏行情盯盘插件（DeepSeek Harness）：国内期货 / 外盘期货 / 全球股指 / 外汇 / 股票（A股+美股）分组自选，多源行情与 K 线，可选悬浮胶囊。",
+  "icon": "icon.svg",
+  "author": "gary",
+  "type": "module",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2"
+  },
+  "main": "lib/main.js",
+  "exports": {
+    ".": "./lib/main.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "lib/client.js",
+    "lib/main.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible",
+        "0.2.1-rc.2": "compatible"
+      }
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "quote",
+    "watchlist",
+    "stock",
+    "futures",
+    "forex",
+    "index",
+    "kline",
+    "ui"
+  ],
+  "license": "MIT"
+}
